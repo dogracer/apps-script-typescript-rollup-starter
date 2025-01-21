@@ -89,7 +89,7 @@ export function getAuthorizedUser(): string {
       throw new Error('App is not authorized.');
   }
 
-  const response = UrlFetchApp.fetch('https://oauth.mocklab.io/userinfo', {
+  const response = UrlFetchApp.fetch('https://427e1.wiremockapi.cloud/userinfo', {
     method: 'get',
     headers: {
         'Authorization': `Bearer ${service.getAccessToken()}`,
@@ -118,8 +118,8 @@ function buildOAuthService(): GoogleAppsScriptOAuth2.OAuth2Service {
     const clientId = 'mock-client-id';
     const clientSecret = 'mock-client-secret';
     const scope = 'mock-scope';
-    const authUrl = 'https://oauth.mocklab.io/oauth/authorize';
-    const tokenUrl = 'https://oauth.mocklab.io/oauth/token';
+    const authUrl = 'https://427e1.wiremockapi.cloud/authorize';
+    const tokenUrl = 'https://427e1.wiremockapi.cloud/token';
 
     const service = OAuth2.createService('mock_oauth')
     .setClientId(clientId)
